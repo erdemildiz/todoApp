@@ -18,26 +18,19 @@ class CategoriBuilder {
         let router      = CategoriRouter()
         
         // Setup
-        view.presenter         = presenter
-        presenter.listView     = view
-        presenter.router       = router
-        interactor.presenter   = presenter
+        view.presenter              = presenter
+        presenter.listView          = view
+        presenter.router            = router
+        presenter.interactor        = interactor
+        interactor.presenter        = presenter
         
         return view
     }
     
-    func createUpdateView() -> CategoriUpdateController {
+    func createUpdateView(categoriItem: CategoriItem? = nil) -> CategoriUpdateController {
         
-        let view        = CategoriUpdateController()
-//        let presenter   = CategoriPresenter()
-//        let interactor  = CategoriInteractor()
-//        let router      = CategoriRouter()
-//
-//        // Setup
-//        view.presenter         = presenter
-//        presenter.listView     = view
-//        presenter.router       = router
-//        interactor.presenter   = presenter
+        let view          = CategoriUpdateController()
+        view.categoriItem = categoriItem
         
         return view
     }

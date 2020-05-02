@@ -7,7 +7,18 @@
 //
 
 import Foundation
+import RealmSwift
 
-class CategoriEntity {
+struct CategoriItem {
+    let categoriId: Int?
+    var title: String
+}
+
+class Categori: Object {
+    @objc dynamic var categoriId = 0
+    @objc dynamic var title: String = ""
     
+    override class func primaryKey() -> String? {
+        return "categoriId"
+    }
 }

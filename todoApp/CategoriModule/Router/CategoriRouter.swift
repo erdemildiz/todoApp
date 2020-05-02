@@ -9,7 +9,8 @@
 import UIKit
 
 protocol CategoriRouterDelegate {
-    func navigateUpdatePage()
+    func setNavigationController(navigationController: UINavigationController)
+    func navigateUpdatePage(categoriItem: CategoriItem?, presenter: CategoriPresenter)
 }
 
 class CategoriRouter {
@@ -20,7 +21,15 @@ class CategoriRouter {
 // MARK: Router delegate
 extension CategoriRouter: CategoriRouterDelegate {
     
-    func navigateUpdatePage() {
-        
+    func setNavigationController(navigationController: UINavigationController) {
+        self.navigationController = navigationController
+    }
+    
+    func navigateUpdatePage(categoriItem: CategoriItem?, presenter: CategoriPresenter) {
+        guard let navigationController = navigationController else { return }
+        guard let updateView = presenter.updateView else { return }
+        updateView.categoriItem = categoriItem
+        navigationController.modalPresentationStyle = .fullScreen
+        navigationController.present(updateView, animated: true, completion: nil)
     }
 }

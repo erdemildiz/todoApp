@@ -9,42 +9,90 @@
 import Foundation
 
 protocol CategoriPresenterDelegate {
+    // Lifecycle
     func notifyDidLoad()
-    func notifyWillAppear()
-    func fetchCategoriList()
-    func fetchedSuccess()
-    func fetchedError()
+    func notifyUpdateViewWillAppear(updateView: CategoriUpdateController)
+    // Data
+    func fetchedCategoriList(categorList: [CategoriItem])
+    func createCategori(categoriItem: CategoriItem)
+    func updateCategori(categoriItem: CategoriItem)
+    // Router
+    func navigateUpdatePage(categoriItem: CategoriItem?)
 }
 
 class CategoriPresenter {
     weak var listView: CategoriListController?
-    weak var updateView: CategoriUpdateController?
-    var router: CategoriRouterDelegate?
+    var updateView: CategoriUpdateController?
+    var  router: CategoriRouterDelegate?
+    var interactor: CategoriInteractorDelegate?
 }
 
-
+// MARK: Lifecycle
 extension CategoriPresenter: CategoriPresenterDelegate {
     
-    // MARK: Lifecycle
     func notifyDidLoad() {
-        
+        guard let listView = listView else { return }
+        guard let router   = router else { return }
+        guard let navigationController = listView.navigationController else { return }
+        listView.prepareNavigationBar()
+        router.setNavigationController(navigationController: navigationController)
+        // Fetch data
+        fetchCategoriList()
+        createAndSetUpdateView()
     }
     
-    func notifyWillAppear() {
-        
+    func notifyUpdateViewWillAppear(updateView: CategoriUpdateController) {
+        updateView.setupUI()
+        updateView.setupCategoriInto()
     }
     
-    // MARK: Fetch Data
     func fetchCategoriList() {
-        
+        guard let interactor = interactor else { return }
+        interactor.fetchCategorList()
     }
     
-    func fetchedSuccess() {
-        
+    fileprivate func createAndSetUpdateView(){
+        let categoriBuilder = CategoriBuilder()
+        let updateView = categoriBuilder.createUpdateView(categoriItem: nil)
+        updateView.presenter = self
+        self.updateView = updateView
     }
-    
-    func fetchedError() {
-        
-    }
-    
 }
+
+
+// MARK: Data
+extension CategoriPresenter {
+    
+    func fetchedCategoriList(categorList: [CategoriItem]) {
+        guard let listView = listView else { return }
+        listView.categoriList = categorList
+        listView.reloadTableView()
+    }
+    
+    func createCategori(categoriItem: CategoriItem){
+        guard let interactor = interactor else { return }
+        interactor.createCategori(categoriItem: categoriItem) { [weak self] in
+            self?.fetchCategoriList()
+        }
+    }
+    
+    func updateCategori(categoriItem: CategoriItem){
+        guard let interactor = interactor else { return }        
+        interactor.updateCategori(categoriItem: categoriItem)
+        interactor.fetchCategorList()
+    }
+}
+
+// MARK: Router
+extension CategoriPresenter {
+    
+    func navigateUpdatePage(categoriItem: CategoriItem?) {
+        guard let router = router else { return }
+        if let categoriItem = categoriItem { // Update
+            router.navigateUpdatePage(categoriItem: categoriItem, presenter: self)
+        } else { // Create
+            router.navigateUpdatePage(categoriItem: nil, presenter: self)
+        }
+    }
+}
+

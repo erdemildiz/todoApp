@@ -11,8 +11,8 @@ import UIKit
 class TabbarController: UITabBarController {
     
     // MARK: Lifecycle - willAppear
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    override func viewDidLoad() {
+        super.viewDidLoad()
         // Setup tabbar
         setupTabbarItem()
     }
@@ -21,14 +21,16 @@ class TabbarController: UITabBarController {
         // First tabbar
         let categoriBuilder         = CategoriBuilder()
         let categoriListView        = categoriBuilder.createlistView()
-        let categoriTabbarItem      = UITabBarItem(title: "Categories", image: nil, selectedImage: nil)
+        let categoriTabbarItem      = UITabBarItem(title: Tabbar.firstTabbar, image: Icons.categori, selectedImage: nil)
         categoriListView.tabBarItem = categoriTabbarItem
+        let categoriWithNavbar      = UINavigationController(rootViewController: categoriListView)
         // Second tabbar
         let favouriteBuilder        = FavouriteBuilder()
         let favouriteList           = favouriteBuilder.createListView()
-        let favouriteTabbarItem     = UITabBarItem(title: "Favourites", image: nil, selectedImage: nil)
+        let favouriteTabbarItem     = UITabBarItem(title: Tabbar.secondTabbar, image: Icons.favori, selectedImage: nil)
         favouriteList.tabBarItem    = favouriteTabbarItem
+        let favouriteWithNavbar     = UINavigationController(rootViewController: favouriteList)
         
-        self.viewControllers = [categoriListView, favouriteList]
+        self.viewControllers = [categoriWithNavbar, favouriteWithNavbar]
     }
 }
