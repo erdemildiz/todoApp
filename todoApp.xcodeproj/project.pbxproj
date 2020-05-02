@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		09887BB8245D998C00B4091F /* ProductItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09887BB6245D998C00B4091F /* ProductItemCell.swift */; };
+		09887BB9245D998C00B4091F /* ProductItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09887BB7245D998C00B4091F /* ProductItemCell.xib */; };
+		09887BC1245DA67200B4091F /* UIImageView+BackgroundSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09887BC0245DA67200B4091F /* UIImageView+BackgroundSync.swift */; };
 		09B6068D245C730B00032505 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B60684245C730B00032505 /* SceneDelegate.swift */; };
 		09B6068F245C730B00032505 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B60686245C730B00032505 /* AppDelegate.swift */; };
 		09B60698245C740200032505 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09B60696245C740200032505 /* Realm.framework */; };
@@ -63,6 +66,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		09887BB6245D998C00B4091F /* ProductItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductItemCell.swift; sourceTree = "<group>"; };
+		09887BB7245D998C00B4091F /* ProductItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductItemCell.xib; sourceTree = "<group>"; };
+		09887BC0245DA67200B4091F /* UIImageView+BackgroundSync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+BackgroundSync.swift"; sourceTree = "<group>"; };
 		09B6066C245C72D500032505 /* todoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = todoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		09B60684245C730B00032505 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		09B60686245C730B00032505 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -117,6 +123,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		09887BB5245D996900B4091F /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				09887BB6245D998C00B4091F /* ProductItemCell.swift */,
+				09887BB7245D998C00B4091F /* ProductItemCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		09887BBF245DA63D00B4091F /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				09887BC0245DA67200B4091F /* UIImageView+BackgroundSync.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		09B60663245C72D500032505 = {
 			isa = PBXGroup;
 			children = (
@@ -140,6 +163,7 @@
 				09B60686245C730B00032505 /* AppDelegate.swift */,
 				09B60684245C730B00032505 /* SceneDelegate.swift */,
 				09B6068A245C730B00032505 /* Info.plist */,
+				09887BBF245DA63D00B4091F /* Extension */,
 				09E1535D245C7C3500EC7BB9 /* Utilities */,
 				09E1535C245C7C2C00EC7BB9 /* Common */,
 				09E15354245C7BEC00EC7BB9 /* CategoriModule */,
@@ -288,8 +312,9 @@
 		09E15353245C7BE700EC7BB9 /* List */ = {
 			isa = PBXGroup;
 			children = (
-				09E15371245C7CFC00EC7BB9 /* ProductList+Tableview.swift */,
+				09887BB5245D996900B4091F /* Cell */,
 				09E15370245C7CFC00EC7BB9 /* ProductListController.swift */,
+				09E15371245C7CFC00EC7BB9 /* ProductList+Tableview.swift */,
 			);
 			path = List;
 			sourceTree = "<group>";
@@ -470,6 +495,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09887BB9245D998C00B4091F /* ProductItemCell.xib in Resources */,
 				09E153A3245CA30D00EC7BB9 /* Localizable.strings in Resources */,
 				09E15339245C7A5100EC7BB9 /* Assets.xcassets in Resources */,
 				09E15376245C7D0C00EC7BB9 /* ProductUpdateController.xib in Resources */,
@@ -513,6 +539,7 @@
 				09E1536B245C7CC400EC7BB9 /* ProductRouter.swift in Sources */,
 				09E153A8245CA58B00EC7BB9 /* StorageManager.swift in Sources */,
 				09E15367245C7C9D00EC7BB9 /* FavouriteController+Tableview.swift in Sources */,
+				09887BB8245D998C00B4091F /* ProductItemCell.swift in Sources */,
 				09E15372245C7CFC00EC7BB9 /* ProductListController.swift in Sources */,
 				09E15392245C7E4700EC7BB9 /* FavouriteBuilder.swift in Sources */,
 				09E15363245C7C8E00EC7BB9 /* FavouritePresenter.swift in Sources */,
@@ -535,6 +562,7 @@
 				09E1537B245C7D2A00EC7BB9 /* CategoriRouter.swift in Sources */,
 				09E15383245C7D4E00EC7BB9 /* CategoriListController.swift in Sources */,
 				09E1537F245C7D4000EC7BB9 /* CategoriPresenter.swift in Sources */,
+				09887BC1245DA67200B4091F /* UIImageView+BackgroundSync.swift in Sources */,
 				09B6068D245C730B00032505 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

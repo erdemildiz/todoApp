@@ -10,15 +10,26 @@ import UIKit
 
 extension ProductListController {
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        guard let productItems = productItems, productItems.count > 0 else { return 1 }
+        return productItems.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+       guard let productItems = productItems, productItems.count > 0 else {
+           let emptyStateCell = UITableViewCell()
+           tableView.separatorStyle = .none
+           emptyStateCell.textLabel?.text = ProductPage.emptyMessage
+           emptyStateCell.textLabel?.textAlignment = .center
+           return emptyStateCell
+       }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: ProductItemCell.cellIdentifier) as? ProductItemCell else { return UITableViewCell() }
+        cell.selectionStyle = .none
+        cell.prodcutItem = productItems[indexPath.row]
+       return cell
     }
 }

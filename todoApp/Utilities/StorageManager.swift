@@ -17,7 +17,7 @@ class StorageManager {
     }()
         
     // MARK: Add
-    func add(object: Object){
+    func add(object: Object){        
         do {
             try self.realm.write {
              self.realm.add(object)
@@ -29,10 +29,11 @@ class StorageManager {
     }
     
     // MARK: Delete
-    func delete(object: Object) {
+    func delete(object: Object.Type, item: (primaryKey: String, index: Int)) {
         do {
+            guard let deleteObject = self.realm.objects(object).filter(item.primaryKey + " == \(item.index)").first else { return }
             try self.realm.write {
-             self.realm.delete(object)
+             self.realm.delete(deleteObject)
             }
         } catch let error {
             fatalError(error.localizedDescription)

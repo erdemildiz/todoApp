@@ -12,6 +12,7 @@ import RealmSwift
 protocol CategoriInteractorDelegate {
     func createCategori(categoriItem: CategoriItem, complete: @escaping (() -> Void))
     func updateCategori(categoriItem: CategoriItem)
+    func deleteCategori(categoriItem: CategoriItem)
     func fetchCategorList()
 }
 
@@ -51,5 +52,11 @@ extension CategoriInteractor: CategoriInteractorDelegate {
         guard let categoriId = categoriItem.categoriId else { return }
         let updatedCategori = ["title": categoriItem.title, "categoriId": categoriId] as [String : Any]
         storageManager.update(object: Categori.self, newValue: updatedCategori)
+    }
+    
+    func deleteCategori(categoriItem: CategoriItem) {
+        guard let storageManager = self.storageManage else { return }
+        guard let categoriId = categoriItem.categoriId else { return }
+        storageManager.delete(object: Categori.self, item: (primaryKey: "categoriId", index: categoriId))
     }
 }

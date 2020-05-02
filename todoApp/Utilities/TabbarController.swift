@@ -19,11 +19,17 @@ class TabbarController: UITabBarController {
     
     fileprivate func setupTabbarItem() {
         // First tabbar
-        let categoriBuilder         = CategoriBuilder()
-        let categoriListView        = categoriBuilder.createlistView()
-        let categoriTabbarItem      = UITabBarItem(title: Tabbar.firstTabbar, image: Icons.categori, selectedImage: nil)
-        categoriListView.tabBarItem = categoriTabbarItem
-        let categoriWithNavbar      = UINavigationController(rootViewController: categoriListView)
+        let productBuilder         = ProductBuilder()
+        let productListView        = productBuilder.createListView(categoriItem: CategoriItem(categoriId: 2, title: "test"))
+        let productTabbarItem      = UITabBarItem(title: Tabbar.firstTabbar, image: Icons.categori, selectedImage: nil)
+        productListView.tabBarItem = productTabbarItem
+        let productWithNavbar      = UINavigationController(rootViewController: productListView)
+        
+//        let categoriBuilder         = CategoriBuilder()
+//        let categoriListView        = categoriBuilder.createlistView()
+//        let categoriTabbarItem      = UITabBarItem(title: Tabbar.firstTabbar, image: Icons.categori, selectedImage: nil)
+//        categoriListView.tabBarItem = categoriTabbarItem
+//        let categoriWithNavbar      = UINavigationController(rootViewController: categoriListView)
         // Second tabbar
         let favouriteBuilder        = FavouriteBuilder()
         let favouriteList           = favouriteBuilder.createListView()
@@ -31,6 +37,6 @@ class TabbarController: UITabBarController {
         favouriteList.tabBarItem    = favouriteTabbarItem
         let favouriteWithNavbar     = UINavigationController(rootViewController: favouriteList)
         
-        self.viewControllers = [categoriWithNavbar, favouriteWithNavbar]
+        self.viewControllers = [productWithNavbar, favouriteWithNavbar]
     }
 }

@@ -17,3 +17,19 @@
 "categori_update_placeholder_title"     = "Başlık";
 "categori_update_button_add_title"      = "Ekle";
 "categori_update_button_update_title"   = "Güncelle";
+"categori_update_button_delete_title"   = "Sil";
+
+// Product
+"product_page_title"                    = "Ürünler";
+"product_empty_message"                 = "Bu kategoriye ait ürün bulunamadı";
+"product_update_title"                  = "Ürün Bilgileri";
+"product_update_button_add_title"       = "Ekle";
+"product_update_button_update_title"    = "Güncelle";
+"product_update_button_delete_title"    = "Sil";
+"product_update_image_url_label"        = "Görsel url";
+"product_update_title_label"            = "Başlık";
+"product_update_description_label"      = "Açıklama";
+"product_update_price_label"            = "Fiyat";
+
+// Common
+"placeholder_image_url"                 = "https://i.picsum.photos/id/237/250/400.jpg";

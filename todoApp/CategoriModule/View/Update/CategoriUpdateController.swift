@@ -11,6 +11,7 @@ import UIKit
 protocol CategoriUpdateControllerDelegate {
     func setupUI()
     func setupCategoriInto()
+    func clearAndClose()
 }
 
 class CategoriUpdateController: UIViewController {
@@ -28,7 +29,7 @@ class CategoriUpdateController: UIViewController {
         super.viewWillAppear(animated)
         // Notify
         guard let presenter = presenter else { return }
-        presenter.notifyUpdateViewWillAppear(updateView: self)
+        presenter.notifyUpdateViewWillAppear()
     }
     
     @IBAction func handleActionBtnTapped(_ sender: Any) {
@@ -44,13 +45,6 @@ class CategoriUpdateController: UIViewController {
             let categoriItem = CategoriItem(categoriId: nil, title: categoriTitle)
             presenter.createCategori(categoriItem: categoriItem)
         }
-        
-        clearAndClose()
-    }
-    
-    fileprivate func clearAndClose(){
-        textField.text = ""
-        dismiss(animated: true, completion: nil)
     }
 }
 
@@ -67,6 +61,11 @@ extension CategoriUpdateController: CategoriUpdateControllerDelegate {
         guard let categoriItem = categoriItem else { return }
         textField.text = categoriItem.title
         actionBtn.setTitle(CategoriPage.updateButtonUpdateTitle, for: .normal)
+    }
+    
+    func clearAndClose(){
+        textField.text = ""
+        dismiss(animated: true, completion: nil)
     }
     
 }

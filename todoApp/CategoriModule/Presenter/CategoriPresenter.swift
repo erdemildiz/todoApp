@@ -11,11 +11,12 @@ import Foundation
 protocol CategoriPresenterDelegate {
     // Lifecycle
     func notifyDidLoad()
-    func notifyUpdateViewWillAppear(updateView: CategoriUpdateController)
+    func notifyUpdateViewWillAppear()
     // Data
     func fetchedCategoriList(categorList: [CategoriItem])
     func createCategori(categoriItem: CategoriItem)
     func updateCategori(categoriItem: CategoriItem)
+    func deleteCategori(categoriItem: CategoriItem)
     // Router
     func navigateUpdatePage(categoriItem: CategoriItem?)
 }
@@ -27,7 +28,7 @@ class CategoriPresenter {
     var interactor: CategoriInteractorDelegate?
 }
 
-// MARK: Lifecycle
+// MARK: Lifecycle - UI
 extension CategoriPresenter: CategoriPresenterDelegate {
     
     func notifyDidLoad() {
@@ -41,14 +42,10 @@ extension CategoriPresenter: CategoriPresenterDelegate {
         createAndSetUpdateView()
     }
     
-    func notifyUpdateViewWillAppear(updateView: CategoriUpdateController) {
+    func notifyUpdateViewWillAppear() {
+        guard let updateView = updateView else { return }
         updateView.setupUI()
         updateView.setupCategoriInto()
-    }
-    
-    func fetchCategoriList() {
-        guard let interactor = interactor else { return }
-        interactor.fetchCategorList()
     }
     
     fileprivate func createAndSetUpdateView(){
@@ -62,6 +59,11 @@ extension CategoriPresenter: CategoriPresenterDelegate {
 
 // MARK: Data
 extension CategoriPresenter {
+    
+    func fetchCategoriList() {
+        guard let interactor = interactor else { return }
+        interactor.fetchCategorList()
+    }
     
     func fetchedCategoriList(categorList: [CategoriItem]) {
         guard let listView = listView else { return }
@@ -79,6 +81,12 @@ extension CategoriPresenter {
     func updateCategori(categoriItem: CategoriItem){
         guard let interactor = interactor else { return }        
         interactor.updateCategori(categoriItem: categoriItem)
+        interactor.fetchCategorList()
+    }
+    
+    func deleteCategori(categoriItem: CategoriItem) {
+        guard let interactor = interactor else { return }
+        interactor.deleteCategori(categoriItem: categoriItem)
         interactor.fetchCategorList()
     }
 }

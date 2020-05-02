@@ -17,3 +17,19 @@
 "categori_update_placeholder_title"   = "Title";
 "categori_update_button_add_title"    = "Add";
 "categori_update_button_update_title" = "Update";
+"categori_update_button_delete_title" = "Sil";
+
+// Product
+"product_page_title"                  = "Products";
+"product_empty_message"               = "There is no product in this category";
+"product_update_title"                = "Product Info";
+"product_update_button_add_title"     = "Add";
+"product_update_button_update_title"  = "Update";
+"product_update_button_delete_title"  = "Delete";
+"product_update_image_url_label"      = "Image url";
+"product_update_title_label"          = "Title";
+"product_update_description_label"    = "Description";
+"product_update_price_label"          = "Price";
+
+// Common
+"placeholder_image_url"               = "https://i.picsum.photos/id/237/250/400.jpg";

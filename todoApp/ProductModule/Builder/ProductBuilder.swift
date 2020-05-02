@@ -10,7 +10,7 @@ import Foundation
 
 class ProductBuilder {
     
-    func createListView() -> ProductListController {
+    func createListView(categoriItem: CategoriItem) -> ProductListController {
         
         let view        = ProductListController()
         let presenter   = ProductPresenter()
@@ -21,8 +21,18 @@ class ProductBuilder {
         view.presenter         = presenter
         presenter.listView     = view
         presenter.router       = router
+        presenter.categoriItem = categoriItem
+        presenter.interactor   = interactor
         interactor.presenter   = presenter
 
+        return view
+    }
+    
+    func createUpdateView(productItem: ProductItem? = nil) -> ProductUpdateController {
+        
+        let view          = ProductUpdateController()
+//        view.categoriItem = categoriItem
+        
         return view
     }
 }
