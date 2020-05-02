@@ -1,0 +1,19 @@
+/* 
+  Localizable.strings
+  todoApp
+
+  Created by Erdem ILDIZ on 1.05.2020.
+  Copyright © 2020 Erdem ILDIZ. All rights reserved.
+*/
+
+// Tabbar
+"categories" = "Categories";
+"favourites" = "Favourites";
+
+// Categori
+"categori_page_title"                 = "Product Categories";
+"categori_empty_message"              = "No Categori";
+"categori_update_title"               = "Categori Title";
+"categori_update_placeholder_title"   = "Title";
+"categori_update_button_add_title"    = "Add";
+"categori_update_button_update_title" = "Update";
