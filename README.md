@@ -1,5 +1,3 @@
-# todoApp
-Todo App using VIPER, Realm
 
 # TODO APP
 
