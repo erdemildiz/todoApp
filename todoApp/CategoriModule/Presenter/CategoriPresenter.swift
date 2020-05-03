@@ -24,7 +24,7 @@ protocol CategoriPresenterDelegate {
 
 class CategoriPresenter {
     weak var listView: CategoriListController?
-    var updateView: CategoriUpdateController?
+    var updateView: CategoriAddUpdateController?
     var  router: CategoriRouterDelegate?
     var interactor: CategoriInteractorDelegate?
 }

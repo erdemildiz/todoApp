@@ -10,6 +10,10 @@ import UIKit
 
 extension UIImageView {
     
+    /**
+        Set image without block UI
+        - parameter imageUrl: Image url 
+     */
     func setImage(imageUrl: String) {
         guard let url = URL(string: imageUrl), !imageUrl.isEmpty else { return }
         do {

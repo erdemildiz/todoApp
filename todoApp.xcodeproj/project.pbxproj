@@ -30,15 +30,15 @@
 		09E15372245C7CFC00EC7BB9 /* ProductListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E15370245C7CFC00EC7BB9 /* ProductListController.swift */; };
 		09E15373245C7CFC00EC7BB9 /* ProductList+Tableview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E15371245C7CFC00EC7BB9 /* ProductList+Tableview.swift */; };
 		09E15376245C7D0C00EC7BB9 /* ProductUpdateController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09E15374245C7D0B00EC7BB9 /* ProductUpdateController.xib */; };
-		09E15377245C7D0C00EC7BB9 /* ProductUpdateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E15375245C7D0B00EC7BB9 /* ProductUpdateController.swift */; };
+		09E15377245C7D0C00EC7BB9 /* ProductAddUpdateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E15375245C7D0B00EC7BB9 /* ProductAddUpdateController.swift */; };
 		09E15379245C7D2000EC7BB9 /* CategoriEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E15378245C7D2000EC7BB9 /* CategoriEntity.swift */; };
 		09E1537B245C7D2A00EC7BB9 /* CategoriRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E1537A245C7D2A00EC7BB9 /* CategoriRouter.swift */; };
 		09E1537D245C7D3500EC7BB9 /* CategoriInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E1537C245C7D3500EC7BB9 /* CategoriInteractor.swift */; };
 		09E1537F245C7D4000EC7BB9 /* CategoriPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E1537E245C7D4000EC7BB9 /* CategoriPresenter.swift */; };
 		09E15382245C7D4E00EC7BB9 /* CategoriListController+Tableview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E15380245C7D4E00EC7BB9 /* CategoriListController+Tableview.swift */; };
 		09E15383245C7D4E00EC7BB9 /* CategoriListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E15381245C7D4E00EC7BB9 /* CategoriListController.swift */; };
-		09E15386245C7D5B00EC7BB9 /* CategoriUpdateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E15384245C7D5B00EC7BB9 /* CategoriUpdateController.swift */; };
-		09E15387245C7D5B00EC7BB9 /* CategoriUpdateController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09E15385245C7D5B00EC7BB9 /* CategoriUpdateController.xib */; };
+		09E15386245C7D5B00EC7BB9 /* CategoriAddUpdateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E15384245C7D5B00EC7BB9 /* CategoriAddUpdateController.swift */; };
+		09E15387245C7D5B00EC7BB9 /* CategoriAddUpdateController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09E15385245C7D5B00EC7BB9 /* CategoriAddUpdateController.xib */; };
 		09E15389245C7D7300EC7BB9 /* TabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E15388245C7D7300EC7BB9 /* TabbarController.swift */; };
 		09E1538E245C7E3000EC7BB9 /* CategoriBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E1538D245C7E3000EC7BB9 /* CategoriBuilder.swift */; };
 		09E15390245C7E3D00EC7BB9 /* ProductBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E1538F245C7E3D00EC7BB9 /* ProductBuilder.swift */; };
@@ -90,15 +90,15 @@
 		09E15370245C7CFC00EC7BB9 /* ProductListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductListController.swift; sourceTree = "<group>"; };
 		09E15371245C7CFC00EC7BB9 /* ProductList+Tableview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ProductList+Tableview.swift"; sourceTree = "<group>"; };
 		09E15374245C7D0B00EC7BB9 /* ProductUpdateController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductUpdateController.xib; sourceTree = "<group>"; };
-		09E15375245C7D0B00EC7BB9 /* ProductUpdateController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductUpdateController.swift; sourceTree = "<group>"; };
+		09E15375245C7D0B00EC7BB9 /* ProductAddUpdateController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductAddUpdateController.swift; sourceTree = "<group>"; };
 		09E15378245C7D2000EC7BB9 /* CategoriEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriEntity.swift; sourceTree = "<group>"; };
 		09E1537A245C7D2A00EC7BB9 /* CategoriRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriRouter.swift; sourceTree = "<group>"; };
 		09E1537C245C7D3500EC7BB9 /* CategoriInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriInteractor.swift; sourceTree = "<group>"; };
 		09E1537E245C7D4000EC7BB9 /* CategoriPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriPresenter.swift; sourceTree = "<group>"; };
 		09E15380245C7D4E00EC7BB9 /* CategoriListController+Tableview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CategoriListController+Tableview.swift"; sourceTree = "<group>"; };
 		09E15381245C7D4E00EC7BB9 /* CategoriListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriListController.swift; sourceTree = "<group>"; };
-		09E15384245C7D5B00EC7BB9 /* CategoriUpdateController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriUpdateController.swift; sourceTree = "<group>"; };
-		09E15385245C7D5B00EC7BB9 /* CategoriUpdateController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoriUpdateController.xib; sourceTree = "<group>"; };
+		09E15384245C7D5B00EC7BB9 /* CategoriAddUpdateController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriAddUpdateController.swift; sourceTree = "<group>"; };
+		09E15385245C7D5B00EC7BB9 /* CategoriAddUpdateController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoriAddUpdateController.xib; sourceTree = "<group>"; };
 		09E15388245C7D7300EC7BB9 /* TabbarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabbarController.swift; sourceTree = "<group>"; };
 		09E1538D245C7E3000EC7BB9 /* CategoriBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriBuilder.swift; sourceTree = "<group>"; };
 		09E1538F245C7E3D00EC7BB9 /* ProductBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductBuilder.swift; sourceTree = "<group>"; };
@@ -314,7 +314,7 @@
 		09E15352245C7BDD00EC7BB9 /* Add&Update */ = {
 			isa = PBXGroup;
 			children = (
-				09E15375245C7D0B00EC7BB9 /* ProductUpdateController.swift */,
+				09E15375245C7D0B00EC7BB9 /* ProductAddUpdateController.swift */,
 				09E15374245C7D0B00EC7BB9 /* ProductUpdateController.xib */,
 			);
 			path = "Add&Update";
@@ -387,8 +387,8 @@
 		09E1535A245C7C1F00EC7BB9 /* Add&Update */ = {
 			isa = PBXGroup;
 			children = (
-				09E15384245C7D5B00EC7BB9 /* CategoriUpdateController.swift */,
-				09E15385245C7D5B00EC7BB9 /* CategoriUpdateController.xib */,
+				09E15384245C7D5B00EC7BB9 /* CategoriAddUpdateController.swift */,
+				09E15385245C7D5B00EC7BB9 /* CategoriAddUpdateController.xib */,
 			);
 			path = "Add&Update";
 			sourceTree = "<group>";
@@ -511,7 +511,7 @@
 				09E15339245C7A5100EC7BB9 /* Assets.xcassets in Resources */,
 				09E15376245C7D0C00EC7BB9 /* ProductUpdateController.xib in Resources */,
 				09E15394245C7E8D00EC7BB9 /* Launch Screen.storyboard in Resources */,
-				09E15387245C7D5B00EC7BB9 /* CategoriUpdateController.xib in Resources */,
+				09E15387245C7D5B00EC7BB9 /* CategoriAddUpdateController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -547,7 +547,7 @@
 				09E153AF245CDF0F00EC7BB9 /* Colors.swift in Sources */,
 				09E15361245C7C8300EC7BB9 /* FavouriteInteractor.swift in Sources */,
 				091BC3E7245E323C003BCE7D /* FavouriteEntity.swift in Sources */,
-				09E15386245C7D5B00EC7BB9 /* CategoriUpdateController.swift in Sources */,
+				09E15386245C7D5B00EC7BB9 /* CategoriAddUpdateController.swift in Sources */,
 				09E1536B245C7CC400EC7BB9 /* ProductRouter.swift in Sources */,
 				09E153A8245CA58B00EC7BB9 /* StorageManager.swift in Sources */,
 				09E15367245C7C9D00EC7BB9 /* FavouriteController+Tableview.swift in Sources */,
@@ -566,7 +566,7 @@
 				09E1536D245C7CDC00EC7BB9 /* ProductInteractor.swift in Sources */,
 				09E1538E245C7E3000EC7BB9 /* CategoriBuilder.swift in Sources */,
 				09E15382245C7D4E00EC7BB9 /* CategoriListController+Tableview.swift in Sources */,
-				09E15377245C7D0C00EC7BB9 /* ProductUpdateController.swift in Sources */,
+				09E15377245C7D0C00EC7BB9 /* ProductAddUpdateController.swift in Sources */,
 				09E15379245C7D2000EC7BB9 /* CategoriEntity.swift in Sources */,
 				09E15366245C7C9D00EC7BB9 /* FavouriteController.swift in Sources */,
 				09B6068F245C730B00032505 /* AppDelegate.swift in Sources */,

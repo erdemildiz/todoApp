@@ -16,7 +16,7 @@ class StorageManager {
         return realm
     }()
         
-    // MARK: Add
+    // MARK: Add    
     func add(object: Object){        
         do {
             try self.realm.write {

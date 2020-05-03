@@ -28,9 +28,9 @@ class ProductBuilder {
         return view
     }
     
-    func createUpdateView(productItem: ProductItem? = nil) -> ProductUpdateController {
+    func createUpdateView(productItem: ProductItem? = nil) -> ProductAddUpdateController {
         
-        let view          = ProductUpdateController()
+        let view          = ProductAddUpdateController()
 //        view.categoriItem = categoriItem
         
         return view

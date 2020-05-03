@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProductUpdateController" customModule="todoApp" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProductAddUpdateController" customModule="todoApp" customModuleProvider="target">
             <connections>
                 <outlet property="descTextField" destination="hRd-9Z-yc8" id="heG-NY-k97"/>
                 <outlet property="descTextFieldlabel" destination="uaZ-cE-Szd" id="Nx5-Lg-r5c"/>

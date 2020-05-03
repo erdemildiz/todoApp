@@ -27,9 +27,9 @@ class CategoriBuilder {
         return view
     }
     
-    func createUpdateView(categoriItem: CategoriItem? = nil) -> CategoriUpdateController {
+    func createUpdateView(categoriItem: CategoriItem? = nil) -> CategoriAddUpdateController {
         
-        let view          = CategoriUpdateController()
+        let view          = CategoriAddUpdateController()
         view.categoriItem = categoriItem
         
         return view

@@ -15,7 +15,7 @@ protocol ProductUpdateControllerDelegate {
     func close()
 }
 
-class ProductUpdateController: UIViewController {
+class ProductAddUpdateController: UIViewController {
     
     @IBOutlet weak var updatePageTitleLabel: UILabel!
     @IBOutlet weak var productImage: UIImageView!
@@ -67,7 +67,7 @@ class ProductUpdateController: UIViewController {
 }
 
 // MARK: ProductUpdateControllerDelegate
-extension ProductUpdateController: ProductUpdateControllerDelegate {
+extension ProductAddUpdateController: ProductUpdateControllerDelegate {
     
     func setupUI(){
         updatePageTitleLabel.text = ProductPage.title

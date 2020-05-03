@@ -14,7 +14,7 @@ protocol CategoriUpdateControllerDelegate {
     func clearAndClose()
 }
 
-class CategoriUpdateController: UIViewController {
+class CategoriAddUpdateController: UIViewController {
     
     //View elements
     @IBOutlet weak var titleLabel: UILabel!
@@ -49,7 +49,7 @@ class CategoriUpdateController: UIViewController {
 }
 
 // MARK: CategoriUpdateControllerDelegate
-extension CategoriUpdateController: CategoriUpdateControllerDelegate {
+extension CategoriAddUpdateController: CategoriUpdateControllerDelegate {
     
     func setupUI() {
         titleLabel.text = CategoriPage.updateLabelTitle

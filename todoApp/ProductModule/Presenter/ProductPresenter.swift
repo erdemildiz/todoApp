@@ -24,7 +24,7 @@ protocol ProductPresenterDelegate {
 
 class ProductPresenter {
     weak var listView: ProductListController?
-    var updateView: ProductUpdateController?
+    var updateView: ProductAddUpdateController?
     var router: ProductRouterDelegate?
     var interactor: ProductInteractorDelegate?
     var categoriItem: CategoriItem?
