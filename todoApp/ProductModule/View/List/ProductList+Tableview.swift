@@ -29,7 +29,34 @@ extension ProductListController {
        }
         guard let cell = tableView.dequeueReusableCell(withIdentifier: ProductItemCell.cellIdentifier) as? ProductItemCell else { return UITableViewCell() }
         cell.selectionStyle = .none
-        cell.prodcutItem = productItems[indexPath.row]
+        cell.delegate = self
+        cell.productItemIndex = indexPath
+        cell.productItem = productItems[indexPath.row]
        return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let deleteAction = UIContextualAction(style: .destructive, title: CategoriPage.deleteActionTitle) { [weak self] (_, _, completionHandler) in
+            guard let self = self else { return }
+            guard let presenter = self.presenter else { return }
+            guard let productItems = self.productItems else { return }
+            let productItem = productItems[indexPath.row]
+            presenter.deleteProduct(productItem: productItem)
+            completionHandler(true)
+        }
+        let editAction = UIContextualAction(style: .normal, title: CategoriPage.updateButtonUpdateTitle) { [weak self]  (_, _, completionHandler) in
+            guard let self = self else { return }
+            guard let presenter = self.presenter else { return }
+            guard let productItems = self.productItems else { return }
+            let productItem = productItems[indexPath.row]
+            presenter.navigateUpdatePage(productItem: productItem)
+            completionHandler(true)
+        }
+        
+        deleteAction.image = Icons.remove
+        editAction.image   = Icons.edit
+        let configuration  = UISwipeActionsConfiguration(actions: [deleteAction, editAction])
+        configuration.performsFirstActionWithFullSwipe = false
+        return configuration
     }
 }

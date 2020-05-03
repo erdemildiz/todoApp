@@ -19,6 +19,7 @@ protocol CategoriPresenterDelegate {
     func deleteCategori(categoriItem: CategoriItem)
     // Router
     func navigateUpdatePage(categoriItem: CategoriItem?)
+    func navigateProductPage(indexPath: IndexPath)
 }
 
 class CategoriPresenter {
@@ -73,9 +74,11 @@ extension CategoriPresenter {
     
     func createCategori(categoriItem: CategoriItem){
         guard let interactor = interactor else { return }
-        interactor.createCategori(categoriItem: categoriItem) { [weak self] in
-            self?.fetchCategoriList()
-        }
+        guard let updateView = updateView else { return }
+        interactor.createCategori(categoriItem: categoriItem)
+        fetchCategoriList()
+        updateView.clearAndClose()
+        
     }
     
     func updateCategori(categoriItem: CategoriItem){
@@ -101,6 +104,16 @@ extension CategoriPresenter {
         } else { // Create
             router.navigateUpdatePage(categoriItem: nil, presenter: self)
         }
+    }
+    
+    func navigateProductPage(indexPath: IndexPath) {
+        guard let router   = router else { return }
+        guard let listView = listView else { return }
+        guard let categoriList = listView.categoriList else { return }
+        let categoriItem = categoriList[indexPath.row]
+        let productBuilder  = ProductBuilder()
+        let productListView = productBuilder.createListView(categoriItem: categoriItem)
+        router.navigateProductPage(view: productListView, categoriItem: categoriItem)
     }
 }
 

@@ -11,6 +11,7 @@ import UIKit
 protocol CategoriRouterDelegate {
     func setNavigationController(navigationController: UINavigationController)
     func navigateUpdatePage(categoriItem: CategoriItem?, presenter: CategoriPresenter)
+    func navigateProductPage(view: UIViewController, categoriItem: CategoriItem)
 }
 
 class CategoriRouter {
@@ -31,5 +32,10 @@ extension CategoriRouter: CategoriRouterDelegate {
         updateView.categoriItem = categoriItem
         navigationController.modalPresentationStyle = .fullScreen
         navigationController.present(updateView, animated: true, completion: nil)
+    }
+    
+    func navigateProductPage(view: UIViewController, categoriItem: CategoriItem) {
+        guard let navigationController = navigationController else { return }
+        navigationController.pushViewController(view, animated: true)
     }
 }

@@ -12,6 +12,7 @@ protocol ProductListControllerDelegate {
     func prepareNavigationBar()
     func registerCell()
     func reloadTableView()
+    func reloadTableRow(indexPath: IndexPath)
 }
 
 class ProductListController: UITableViewController {
@@ -27,11 +28,16 @@ class ProductListController: UITableViewController {
         presenter.notifyDidLoad()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+    }
+    
     @objc
     fileprivate func handleAddBtnTapped() {
         guard let presenter = presenter else { return }
         presenter.navigateUpdatePage(productItem: productItem)
-    }
+    }    
 }
 
 // MARK: ProductListControllerDelegate
@@ -49,4 +55,18 @@ extension ProductListController: ProductListControllerDelegate {
     func reloadTableView(){
         tableView.reloadData()
     }
+    
+    func reloadTableRow(indexPath: IndexPath) {
+        tableView.reloadRows(at: [indexPath], with: .none)
+    }
+}
+
+//MARK: ProductItem Fav Tapped
+extension ProductListController: ProductItemTappedFavIconDelegate {
+    
+    func didTapped(productItem: ProductItem, productItemIndex: IndexPath) {
+        guard let presenter = presenter else { return }
+        presenter.changeFavStatus(productItem: productItem, productItemIndex: productItemIndex)        
+    }
+    
 }

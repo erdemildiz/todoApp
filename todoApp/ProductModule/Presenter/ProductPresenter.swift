@@ -15,6 +15,9 @@ protocol ProductPresenterDelegate {
     // Date
     func fetchedProductList(productItems: [ProductItem])
     func createProduct()
+    func updateProduct(productItem: ProductItem)
+    func deleteProduct(productItem: ProductItem)
+    func changeFavStatus(productItem: ProductItem, productItemIndex: IndexPath)
     // Router
     func navigateUpdatePage(productItem: ProductItem?)
 }
@@ -53,6 +56,7 @@ extension ProductPresenter: ProductPresenterDelegate {
     func notifyUpdateViewWillAppear() {
         guard let updateView = updateView else { return }
         updateView.setupUI()
+        updateView.setProductInfo()
     }
 }
 
@@ -61,7 +65,9 @@ extension ProductPresenter {
     
     fileprivate func fetchProductList() {
        guard let interactor = interactor else { return }
-       interactor.fetchProducts()
+       guard let categoriItem = categoriItem else { return }
+       guard let categoriId = categoriItem.categoriId else { return }
+       interactor.fetchProducts(categoriId: categoriId)
     }
     
     func fetchedProductList(productItems: [ProductItem]) {
@@ -87,9 +93,34 @@ extension ProductPresenter {
         interactor.createProduct(productItem: productItem, categoriItem: categoriItem) { [weak self] in
             guard let self = self else { return }
             guard let updateView = self.updateView else { return }
-            updateView.clearAndClose()
+            self.fetchProductList()
+            updateView.clear()
+            updateView.close()
         }
-        
+    }
+    
+    func updateProduct(productItem: ProductItem) {
+        guard let interactor = interactor else { return }
+        guard let updateView = updateView else { return }
+        interactor.updateProduct(productItem: productItem)
+        updateView.clear()
+        updateView.close()
+        fetchProductList()
+    }
+    
+    func deleteProduct(productItem: ProductItem) {
+        guard let interactor = interactor else { return }
+        interactor.deleteProduct(productItem: productItem)
+        fetchProductList()
+    }
+    
+    func changeFavStatus(productItem: ProductItem, productItemIndex: IndexPath) {
+        guard let interactor = interactor else { return }
+        guard let listView = listView else { return }
+        interactor.changeFavStatus(productItem: productItem)
+        listView.productItems![productItemIndex.row].isFavourite = !listView.productItems![productItemIndex.row].isFavourite
+        listView.reloadTableRow(indexPath: productItemIndex)
+        NotificationCenter.default.post(name: NSNotification.Name("FAV_LIST_CHANGED"), object: nil)
     }
 }
 
@@ -102,7 +133,7 @@ extension ProductPresenter {
         guard let router = router else { return }
         if let productItem = productItem { // Update
             router.navigateUpdatePage(productItem: productItem, presenter: self)
-        } else { // Create
+        } else { // Create            
             router.navigateUpdatePage(productItem: nil, presenter: self)
         }
     }

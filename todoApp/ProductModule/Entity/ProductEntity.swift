@@ -9,14 +9,18 @@
 import Foundation
 import RealmSwift
 
+struct ProductItemPrimaryKey {
+    static let primaryKey = "productId"
+}
+
 struct ProductItem {
     let productId: Int?
-    let name: String
-    let description: String
-    let price: String
-    let imageUrl: String
+    var name: String
+    var description: String
+    var price: String
+    var imageUrl: String
     let categoriId: Int
-    let isFavourite: Bool
+    var isFavourite: Bool
 }
 
 

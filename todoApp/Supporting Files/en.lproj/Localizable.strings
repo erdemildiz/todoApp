@@ -11,7 +11,7 @@
 "favourites" = "Favourites";
 
 // Categori
-"categori_page_title"                 = "Product Categories";
+"categori_page_title"                 = "Product Category";
 "categori_empty_message"              = "No Categori";
 "categori_update_title"               = "Categori Title";
 "categori_update_placeholder_title"   = "Title";
@@ -30,6 +30,10 @@
 "product_update_title_label"          = "Title";
 "product_update_description_label"    = "Description";
 "product_update_price_label"          = "Price";
+
+// Favourite
+"favourite_page_title"                = "Favoriler";
+"favourite_empty_message"             = "Favori ürün bulunamadı";
 
 // Common
 "placeholder_image_url"               = "https://i.picsum.photos/id/237/250/400.jpg";

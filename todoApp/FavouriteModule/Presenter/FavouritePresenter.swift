@@ -9,24 +9,45 @@
 import Foundation
 
 protocol FavouritePresenterDelegate {
+    // Lifecycle
     func notifyDidLoad()
-    func notifyWillAppear()
+    // Data
+    func fetchedFavList(favlist: [FavItem])
+    func favListChanged()
 }
 
 class FavouritePresenter {
     weak var view: FavouriteController?
+    var interactor: FavouriteInteractorDelegate?
     
+    fileprivate func fetchFavList(){
+        guard let interactor = interactor else { return }
+        interactor.fetchFavourites()
+    }
 }
 
-// MARK: Interactor delegate
+// MARK: Lifecycle
 extension FavouritePresenter: FavouritePresenterDelegate {
     
     func notifyDidLoad() {
-        
+        guard let view = view else { return }
+        view.setPageTitle()
+        view.addObserver()
+        fetchFavList()
     }
     
-    func notifyWillAppear() {
+}
+
+// MARK: Data
+extension FavouritePresenter {
         
+    func fetchedFavList(favlist: [FavItem]) {
+        guard let view = view else { return }
+        view.favItems = favlist
+        view.reloadTableView()
     }
     
+    func favListChanged() {
+        fetchFavList()
+    }
 }

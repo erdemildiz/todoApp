@@ -9,6 +9,10 @@
 import Foundation
 import RealmSwift
 
+struct CategoriItemPrimaryKey {
+    static let primaryKey = "categoriId"
+}
+
 struct CategoriItem {
     let categoriId: Int?
     var title: String

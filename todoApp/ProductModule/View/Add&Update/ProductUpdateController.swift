@@ -11,7 +11,8 @@ import UIKit
 protocol ProductUpdateControllerDelegate {
     func setupUI()
     func setProductInfo()
-    func clearAndClose()
+    func clear()
+    func close()
 }
 
 class ProductUpdateController: UIViewController {
@@ -44,11 +45,14 @@ class ProductUpdateController: UIViewController {
     
     
     @IBAction func handleSubmitButtonTapped(_ sender: Any) {
-        guard let presenter = presenter else { return }
-        
-        if let productItem = productItem  { // Update
-//            presenter.createProduct(productItem: productItem)
-        } else {
+        guard let presenter = presenter else { return }        
+        if var productItem = productItem  { // Update
+            productItem.name         = titleTextField.text ?? ""
+            productItem.description  = descTextField.text ?? ""
+            productItem.price        = priceTextField.text ?? ""
+            productItem.imageUrl     = imageTextField.text ?? ""
+            presenter.updateProduct(productItem: productItem)
+        } else { // Add
             presenter.createProduct()
         }
     }
@@ -77,20 +81,26 @@ extension ProductUpdateController: ProductUpdateControllerDelegate {
     }
     
     func setProductInfo() {
-        guard let productItem = productItem else { return }
-        productImage.setImage(imageUrl: productItem.imageUrl)
-        imageTextField.text   = productItem.imageUrl
-        titleTextField.text   = productItem.name
-        descTextField.text    = productItem.description
-        priceTextField.text   = productItem.price
-        submitBtn.setTitle(ProductPage.updateButtonUpdateTitle, for: .normal)
+       guard let productItem = productItem else {
+            clear()
+            return
+        }
+       imageTextField.text   = productItem.imageUrl
+       titleTextField.text   = productItem.name
+       descTextField.text    = productItem.description
+       priceTextField.text   = productItem.price
+       productImage.setImage(imageUrl: productItem.imageUrl)
+       submitBtn.setTitle(ProductPage.updateButtonUpdateTitle, for: .normal)
     }
     
-    func clearAndClose(){
+    func clear(){
        imageTextField.text   = ""
        titleTextField.text   = ""
        descTextField.text    = ""
        priceTextField.text   = ""
-       dismiss(animated: true, completion: nil)
+    }
+    
+    func close() {
+        dismiss(animated: true, completion: nil)
     }
 }

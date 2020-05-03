@@ -10,7 +10,7 @@ import Foundation
 import RealmSwift
 
 protocol CategoriInteractorDelegate {
-    func createCategori(categoriItem: CategoriItem, complete: @escaping (() -> Void))
+    func createCategori(categoriItem: CategoriItem)
     func updateCategori(categoriItem: CategoriItem)
     func deleteCategori(categoriItem: CategoriItem)
     func fetchCategorList()
@@ -19,7 +19,7 @@ protocol CategoriInteractorDelegate {
 class CategoriInteractor {
     
     var presenter: CategoriPresenterDelegate?
-    lazy var storageManage: StorageManager? = {
+    lazy var storageManager: StorageManager? = {
         let manager = StorageManager()
         return manager
     }()
@@ -27,17 +27,16 @@ class CategoriInteractor {
 
 extension CategoriInteractor: CategoriInteractorDelegate {
     
-    func createCategori(categoriItem: CategoriItem, complete: @escaping (() -> Void)) {
-        guard let storageManager = self.storageManage else { return }
+    func createCategori(categoriItem: CategoriItem) {
+        guard let storageManager = self.storageManager else { return }
         let storageObject = Categori()
         storageObject.title = categoriItem.title
-        storageObject.categoriId = storageManager.increasePrimaryKey(object: Categori.self, primaryKey: "categoriId")
+        storageObject.categoriId = storageManager.increasePrimaryKey(object: Categori.self, primaryKey: CategoriItemPrimaryKey.primaryKey)
         storageManager.add(object: storageObject)
-        complete()
     }
     
     func fetchCategorList()  {
-        guard let storageManager = self.storageManage else { return }
+        guard let storageManager = self.storageManager else { return }
         guard let presenter = presenter else { return }
         var categorItems = [CategoriItem]()
         let items = storageManager.realm.objects(Categori.self)
@@ -48,15 +47,15 @@ extension CategoriInteractor: CategoriInteractorDelegate {
     }
     
     func updateCategori(categoriItem: CategoriItem) {
-        guard let storageManager = self.storageManage else { return }
+        guard let storageManager = self.storageManager else { return }
         guard let categoriId = categoriItem.categoriId else { return }
-        let updatedCategori = ["title": categoriItem.title, "categoriId": categoriId] as [String : Any]
+        let updatedCategori = ["title": categoriItem.title, CategoriItemPrimaryKey.primaryKey: categoriId] as [String : Any]
         storageManager.update(object: Categori.self, newValue: updatedCategori)
     }
     
     func deleteCategori(categoriItem: CategoriItem) {
-        guard let storageManager = self.storageManage else { return }
+        guard let storageManager = self.storageManager else { return }
         guard let categoriId = categoriItem.categoriId else { return }
-        storageManager.delete(object: Categori.self, item: (primaryKey: "categoriId", index: categoriId))
+        storageManager.delete(object: Categori.self, item: (primaryKey: CategoriItemPrimaryKey.primaryKey, index: categoriId))
     }
 }

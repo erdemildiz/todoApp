@@ -39,6 +39,12 @@ struct ProductPage {
     static let price                     = NSLocalizedString("product_update_price_label", comment: "")    
 }
 
+// MARK: Favourite
+struct FavouritePage {
+    static let title                     = NSLocalizedString("favourite_page_title", comment: "")
+    static let emptyMessage              = NSLocalizedString("favourite_empty_message", comment: "")
+}
+
 // MARK: Common
 struct Common {
     static let placeholderImageUrl       = NSLocalizedString("placeholder_image_url", comment: "")

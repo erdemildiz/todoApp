@@ -35,10 +35,8 @@ extension CategoriListController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        guard let categoriList = categoriList else { return }
-//        guard let presenter = presenter else { return }
-//        let categoriItem = categoriList[indexPath.row]
-//        presenter.navigateUpdatePage(categoriItem: categoriItem)
+        guard let presenter = self.presenter else { return }
+        presenter.navigateProductPage(indexPath: indexPath)
     }
     
     

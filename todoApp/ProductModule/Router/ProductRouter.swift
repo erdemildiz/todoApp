@@ -27,7 +27,7 @@ extension ProductRouter: ProductRouterDelegate {
     func navigateUpdatePage(productItem: ProductItem?, presenter: ProductPresenter) {
         guard let navigationController = navigationController else { return }
         guard let updateView = presenter.updateView else { return }
-//        updateView.pr = categoriItem
+        updateView.productItem = productItem
         navigationController.modalPresentationStyle = .fullScreen
         navigationController.present(updateView, animated: true, completion: nil)
     }

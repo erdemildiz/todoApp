@@ -51,14 +51,14 @@
                             </stackView>
                         </subviews>
                     </stackView>
-                    <button hidden="YES" opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JAv-z6-qGT" userLabel="Favourite Button">
+                    <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JAv-z6-qGT" userLabel="Favourite Button">
                         <rect key="frame" x="433" y="10" width="25" height="25"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="25" id="D6n-kZ-cS0"/>
                             <constraint firstAttribute="height" constant="25" id="Dcq-px-Q8U"/>
                         </constraints>
-                        <color key="tintColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <state key="normal" image="star.fill" catalog="system">
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <state key="normal" image="star.circle" catalog="system">
                             <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="16" scale="large"/>
                         </state>
@@ -88,6 +88,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="star.fill" catalog="system" width="128" height="116"/>
+        <image name="star.circle" catalog="system" width="128" height="121"/>
     </resources>
 </document>
