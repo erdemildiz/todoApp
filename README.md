@@ -14,12 +14,31 @@ $ carthage update
 ```
 
 # Screenshots
+<table>
+  <tr>
+    <td>Launch Screen</td>
+     <td>Categori Screen</td>
+     <td>Product List</td>
+  </tr>
+  <tr>
+    <td><img src="https://github.com/erdemildiz/todoApp/blob/master/Screenshots/Launchscreen.png?raw=true" width="350" /></td>
+    <td><img src="https://github.com/erdemildiz/todoApp/blob/master/Screenshots/CategoriAddUpdateScreen.png?raw=true" width="350" /></td>
+    <td><img src="https://github.com/erdemildiz/todoApp/blob/master/Screenshots/ProductListPropsScreen.png?raw=true" width="350" /></td>
+  </tr>
+  <tr>
+    <td>Product List Update</td>
+  </tr>
+  <tr>
+    <td><img src="https://github.com/erdemildiz/todoApp/blob/master/Screenshots/ProductAddUpdateScreen.png?raw=true" width="350" /></td>
+  </tr>
+ </table>
 
-  ![Screenshosts](https://github.com/erdemildiz/todoApp/blob/master/Screenshots/Launchscreen.png?raw=true)
-  
-  ![Categori](https://github.com/erdemildiz/todoApp/blob/master/Screenshots/CategoriAddUpdateScreen.png?raw=true)
-  
-  ![Product](https://github.com/erdemildiz/todoApp/blob/master/Screenshots/ProductListPropsScreen.png?raw=true)
-  
-  ![Product Update](https://github.com/erdemildiz/todoApp/blob/master/Screenshots/ProductAddUpdateScreen.png?raw=true)
+
+
+
+
+
+
+
+
 
