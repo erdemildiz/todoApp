@@ -52,6 +52,7 @@ class StorageManager {
         
     }
     
+    // Get last key and increase
     func increasePrimaryKey(object: Object.Type, primaryKey: String) -> Int {
         return (self.realm.objects(object).max(ofProperty: primaryKey) as Int? ?? 0) + 1
     }

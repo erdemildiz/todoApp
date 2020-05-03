@@ -29,6 +29,7 @@ extension ProductListController {
        }
         guard let cell = tableView.dequeueReusableCell(withIdentifier: ProductItemCell.cellIdentifier) as? ProductItemCell else { return UITableViewCell() }
         cell.selectionStyle = .none
+        tableView.separatorStyle = .singleLine
         cell.delegate = self
         cell.productItemIndex = indexPath
         cell.productItem = productItems[indexPath.row]

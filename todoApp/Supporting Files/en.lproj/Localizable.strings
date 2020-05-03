@@ -17,7 +17,7 @@
 "categori_update_placeholder_title"   = "Title";
 "categori_update_button_add_title"    = "Add";
 "categori_update_button_update_title" = "Update";
-"categori_update_button_delete_title" = "Sil";
+"categori_update_button_delete_title" = "Delete";
 
 // Product
 "product_page_title"                  = "Products";
@@ -32,8 +32,8 @@
 "product_update_price_label"          = "Price";
 
 // Favourite
-"favourite_page_title"                = "Favoriler";
-"favourite_empty_message"             = "Favori ürün bulunamadı";
+"favourite_page_title"                = "Favourites";
+"favourite_empty_message"             = "No Favourites";
 
 // Common
-"placeholder_image_url"               = "https://i.picsum.photos/id/237/250/400.jpg";
+"placeholder_image_url"               = "https://via.placeholder.com/250/4E4EFF/00000?text=Image%20Preview";

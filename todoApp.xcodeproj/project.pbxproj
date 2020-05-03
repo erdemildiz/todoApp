@@ -125,6 +125,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		091BC3E8245ECA40003BCE7D /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				09B60686245C730B00032505 /* AppDelegate.swift */,
+				09B60684245C730B00032505 /* SceneDelegate.swift */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
 		09887BB5245D996900B4091F /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -162,9 +171,7 @@
 		09B6066E245C72D500032505 /* todoApp */ = {
 			isa = PBXGroup;
 			children = (
-				09B60686245C730B00032505 /* AppDelegate.swift */,
-				09B60684245C730B00032505 /* SceneDelegate.swift */,
-				09B6068A245C730B00032505 /* Info.plist */,
+				091BC3E8245ECA40003BCE7D /* AppDelegate */,
 				09887BBF245DA63D00B4091F /* Extension */,
 				09E1535D245C7C3500EC7BB9 /* Utilities */,
 				09E1535C245C7C2C00EC7BB9 /* Common */,
@@ -188,6 +195,7 @@
 		09E1532F245C790C00EC7BB9 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				09B6068A245C730B00032505 /* Info.plist */,
 				09E15338245C7A5100EC7BB9 /* Assets.xcassets */,
 				09E15393245C7E8D00EC7BB9 /* Launch Screen.storyboard */,
 				09E153A5245CA30D00EC7BB9 /* Localizable.strings */,
@@ -704,14 +712,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H4HJRX63SD;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = todoApp/Info.plist;
+				INFOPLIST_FILE = "todoApp/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -728,14 +735,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H4HJRX63SD;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = todoApp/Info.plist;
+				INFOPLIST_FILE = "todoApp/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
