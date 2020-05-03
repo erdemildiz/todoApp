@@ -151,6 +151,16 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		09ABA268245F6982004E1774 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				09E15354245C7BEC00EC7BB9 /* CategoriModule */,
+				09E1534C245C7BA100EC7BB9 /* ProductModule */,
+				09E15346245C7B6400EC7BB9 /* FavouriteModule */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
 		09B60663245C72D500032505 = {
 			isa = PBXGroup;
 			children = (
@@ -175,9 +185,7 @@
 				09887BBF245DA63D00B4091F /* Extension */,
 				09E1535D245C7C3500EC7BB9 /* Utilities */,
 				09E1535C245C7C2C00EC7BB9 /* Common */,
-				09E15354245C7BEC00EC7BB9 /* CategoriModule */,
-				09E1534C245C7BA100EC7BB9 /* ProductModule */,
-				09E15346245C7B6400EC7BB9 /* FavouriteModule */,
+				09ABA268245F6982004E1774 /* Modules */,
 				09E1532F245C790C00EC7BB9 /* Supporting Files */,
 			);
 			path = todoApp;
