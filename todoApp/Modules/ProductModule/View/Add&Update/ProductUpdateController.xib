@@ -29,12 +29,6 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cZd-o9-11M">
-                    <rect key="frame" x="87" y="384" width="240" height="128"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <viewLayoutGuide key="contentLayoutGuide" id="thF-Ky-LCs"/>
-                    <viewLayoutGuide key="frameLayoutGuide" id="5Yn-tf-yb5"/>
-                </scrollView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="snc-fC-czJ">
                     <rect key="frame" x="10" y="54" width="394" height="788"/>
                     <subviews>

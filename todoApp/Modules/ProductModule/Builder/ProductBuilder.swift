@@ -31,8 +31,6 @@ class ProductBuilder {
     func createUpdateView(productItem: ProductItem? = nil) -> ProductAddUpdateController {
         
         let view          = ProductAddUpdateController()
-//        view.categoriItem = categoriItem
-        
         return view
     }
 }

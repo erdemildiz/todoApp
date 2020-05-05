@@ -37,6 +37,7 @@ extension ProductListController {
     }
     
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        guard let productItems = productItems, productItems.count > 0 else { return UISwipeActionsConfiguration(actions: [])  }
         let deleteAction = UIContextualAction(style: .destructive, title: CategoriPage.deleteActionTitle) { [weak self] (_, _, completionHandler) in
             guard let self = self else { return }
             guard let presenter = self.presenter else { return }
